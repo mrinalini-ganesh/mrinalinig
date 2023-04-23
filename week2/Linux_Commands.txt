@@ -1,0 +1,46 @@
+Question and Answers:
+1. Enter cd (What directory you are in and what command did you use to find out?)
+I used the command “pwd” to show the current directory. The result was: /home/ubuntu
+
+2.Enter cd .. (What directory are you in?)
+The command cd.. took me to the parent directory. Result: /home
+
+3.Change to the /etc directory and show me the output of ls deb*?
+To change to the /etc directrory, I entered the command “cd /etc” . The command “ls deb*” showed me the output of the files starting with “deb”. Result: debconf.conf and Debian_version
+
+4.Tell the command you used to find all files ending in conf?
+The command I used to find all the files ending in .conf is “ls *conf”
+
+5.Pipe the output of the command in step 4 to another command to get a count how many files and tell me the commands you used and the count.
+To find the number of files that end with conf, I used the command: “find *conf | wc -l “. The result that I got was 28.
+
+6.How many lines in the passwd file that have nologin in them?  What command did you use?
+I used the command "grep nologin /etc/passwd | wc -l" to count the number of lines in the passwd file that have "nologin". The result that I got was: 29.
+
+7.How many lines in the passwd file do not have nologin in them? What command did you use?
+I used the command "grep -v nologin /etc/passwd | wc -l" to count the number of lines in the passwd file that do not have "nologin". The result that I got was 6.
+
+8.Change to your home directory and create test1 directory.  What command did you use?
+I used the command "cd ~" to change to the home directory and then use "mkdir test1" to create the test1 directory.
+
+9.Create the file test1/file1.  What command did you use?
+I used the command "touch test1/file1" to create the file1 inside the test1 directory.
+
+10.Remove the test1 directory with 1 command.  What command did you use?
+I used the command "rm -r test1" to remove the test1 directory along with all its contents.
+
+11.What is the command to get help on the 'ls' command?
+To get help on the ‘ls; command, you have to use: ls --help
+
+12.What is the command to see the history of what you typed in the shell?
+To see the history of what you typed in the shell, type the command: history
+
+13.What command would only display the change directory commands in history
+To display the change directory command in history, I used the command: history | grep “cd”
+
+14.What is different between ls and ls -a, and ls -l commands		
+The ls command is used to list files and directories in a directory. ls -a shows all files and directories, including hidden ones. ls -l shows files and directories in a long format, which includes permissions, owner, group, size, and timestamp.
+
+15.How long has your machine been running?  What command did you use to find this out?
+To find out how long my machine had been running I used the command: uptime
+
