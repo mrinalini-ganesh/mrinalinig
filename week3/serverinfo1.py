@@ -2,19 +2,20 @@
 #This script returns the information about the machine it is running on.
 #Mrinalini-20230428:initial version
 
+# This is importing two python modules
 import socket
 import os
 
-# Get hostname
+# This will get the hostname of the machine
 hostname = socket.gethostname()
 
-# Get number of CPUs
+# This will get the number of CPUs on the machine and stores it in the variable, cpu_count
 cpus = os.cpu_count()
 
-# Get RAM in GB
+# This will get the RAM value in GB, coverts it from bytes to gigabytes
 ram = round(os.sysconf('SC_PAGE_SIZE') * os.sysconf('SC_PHYS_PAGES') / (1024.0 ** 3))
 
-# Get OS type and version
+# This will Get OS type and version
 if os.path.exists('/etc/os-release'):
     with open('/etc/os-release', 'r') as f:
         lines = f.readlines()
@@ -27,10 +28,10 @@ else:
     ostype = os.name
     osversion = os.sys.platform
 
-# Get number of disks
+# This will get the number of disks
 disks = len([d for d in os.listdir('/dev') if d.startswith('sd')])
 
-# Get IP and MAC address
+# This will get the IP and MAC address
 ifconfig = os.popen('ip addr show').read()
 if 'inet ' in ifconfig:
     ipaddr = ifconfig.split('inet ')[1].split('/')[0].strip()
@@ -41,7 +42,7 @@ if 'ether ' in ifconfig:
 else:
     macaddr = 'unknown'
 
-# Print information
+# This will print all the information
 print(f"Hostname: {hostname}")
 print(f"CPU (count): {cpus}")
 print(f"RAM (GB): {ram}")
