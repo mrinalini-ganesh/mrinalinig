@@ -6,21 +6,21 @@ import sys
 import pinglib
 
 def main():
-    # Check if file argument is passed
+    # Check if the file argument is passed
     if len(sys.argv) < 2:
         print("Please provide a file of IPs and names as an argument.")
         return
 
-    # Get file name from argument
+    # Get the file name from argument
     filename = sys.argv[1]
 
     # Read IPs and names from file
     with open(filename, "r") as f:
         for line in f:
-            # Split line into IP and name
+            # Split the line into IP and name
             ip, name = line.strip().split()
 
-            # Ping IP and get time
+            # Ping IP and get the time
             result = pinglib.pingthis(ip)
 
             # Print result

@@ -27,7 +27,7 @@ def ping_file(filename, output_file=None):
             ip_or_dns = line.strip()
             result = pinglib.pingthis(ip_or_dns)
 
-            # Append the IP and ping time to the results list
+            # Appending the IP and ping time to the results list
             if result[1] != "Not Found":
                 results.append([ip_or_dns, result[1]])
 
