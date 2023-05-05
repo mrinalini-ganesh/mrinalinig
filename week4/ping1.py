@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# This script that reads a file of IPs and names, pings each one using the pinglib library, and prints the results to the screen.
-#Mrinalini-20230503:Intial version
+# This script reads a file of IPs and names, pings each one using the pinglib library, and prints the results to the screen.
+# Mrinalini-20230505: Second version
 
 import sys
 import pinglib
@@ -18,13 +18,18 @@ def main():
     with open(filename, "r") as f:
         for line in f:
             # Split the line into IP and name
-            ip, name = line.strip().split()
+            fields = line.strip().split()
+            if len(fields) != 2:
+                print(f"Invalid line in {filename}: {line}")
+                continue
+            ip, name = fields
 
             # Ping IP and get the time
             result = pinglib.pingthis(ip)
 
-            # Print result
-            print(f"{name}, {result[1] if result else 'Not Found'}")
+            # Print result with 2 decimal places
+            print(f"{name}, {result[1]:.2f}" if result else f"{name}, Not Found")
 
 if __name__ == "__main__":
     main()
+
