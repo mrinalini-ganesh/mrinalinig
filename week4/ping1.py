@@ -17,7 +17,7 @@ def main():
     for ipordns in ipordns_list:
         ipordns = ipordns.strip()  # Remove newline character
         result = pinglib.pingthis(ipordns)
-        print(f"{result[0]}, {result[1]}" if result[1] != "Not Found" else f"{result[0]}, NotFound")
+        print(f"{result[0]}, {result[1]:.2f}" if result[1] != "Not Found" else f"{result[0]}, NotFound")
 
 if __name__ == '__main__':
     main()
