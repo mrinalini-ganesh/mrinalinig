@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-# This script will search for an ip in the log file, get the mac adress and print out the vendor of the network device.
-#Mrinalini-20230510:initial version
+# This script will search for an IP in the log file, get the MAC address, and print out the vendor of the network device.
+# Mrinalini-20230514: second version
 
 import re
 import requests
 import csv
+import time
 
 # Set input and output file paths
 input_file = "dhcpdsmall.log"
@@ -34,17 +35,25 @@ with open(input_file, "r") as f:
 # Initialize the CSV data
 csv_data = [["IP", "Mac Address", "Vendor"]]
 
+# Function to call macvendors API with a delay
+def api_call(mac):
+    """Function to call macvendors API"""
+    # Necessary delay for API calls
+    delay = 0.75
+    time.sleep(delay)
+    url = f"https://api.macvendors.com/{mac}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.text.strip()
+    else:
+        print(f"Error for MAC '{mac}': status code {response.status_code}, response text '{response.text}'")
+        return "Unknown"
+
 # Iterate over the IP addresses
 for ip_address in ip_addresses:
     mac_address = mac_addresses.get(ip_address)
     if mac_address:
-        # Make a request to the Macvendors API to get the vendor information
-        url = f"https://api.macvendors.com/{mac_address}"
-        response = requests.get(url)
-        if response.status_code == 200:
-            vendor = response.text.strip()
-        else:
-            vendor = "Unknown"
+        vendor = api_call(mac_address)
     else:
         vendor = "Not Found"
     csv_data.append([ip_address, mac_address, vendor])
@@ -55,3 +64,4 @@ with open(output_file, "w", newline="") as f:
     writer.writerows(csv_data)
 
 print("The CSV file generated successfully.")
+

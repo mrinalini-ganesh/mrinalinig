@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # This script takes the name of the file, finds all the servers that sent email and then writes out a csv file.
-#Mrinalini-20230511:initial version
+#Mrinalini-20230514:second version
 
 import re
 import csv
@@ -10,10 +10,10 @@ def extract_server_info(log_file):
     server_info = {}
     with open(log_file, 'r') as file:
         for line in file:
-            match = re.search(r'(\S+)\s+sys postfix/smtpd.*connect from (\S+)\[([\d.]+)\]', line)
+            match = re.search(r'connect from (\S+)\[([\d.]+)\]', line)
             if match:
                 server_name = match.group(1)
-                server_ip = match.group(3)
+                server_ip = match.group(2)
                 if server_name not in server_info:
                     server_info[server_name] = server_ip
     return server_info
