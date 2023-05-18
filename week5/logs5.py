@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# This script will scan the waveventlog file and create a csv file.
+# Mrinalini-20230514: second version
+
 import re
 from collections import defaultdict
 
