@@ -1,0 +1,15 @@
+DNS,IP,Country,RegionName,City,Zipcode,ISP
+id.nsd.org,52.55.29.219,United States,Virginia,Ashburn,20147,AMAZON-AES
+id.nsd.org,52.72.225.54,United States,Virginia,Ashburn,20147,AMAZON-AES
+ns1.nsd.org,152.157.68.27,United States,Washington,Bothell,98021,NSD417
+ns2.nsd.org,152.157.68.28,United States,Washington,Bothell,98021,NSD417
+ns3.nsd.org,20.120.161.221,United States,Washington,Quincy,98848,MICROSOFT-CORP-MSN-AS-BLOCK
+vpn.nsd.org,152.157.64.4,United States,Washington,Bothell,98021,NSD417
+mail.nsd.org,152.157.69.3,United States,Washington,Bothell,98021,NSD417
+www.nsd.org,104.17.67.73,Canada,Ontario,Toronto,M5A,CLOUDFLARENET
+www.nsd.org,104.17.68.73,Canada,Ontario,Toronto,M5A,CLOUDFLARENET
+www.nsd.org,104.17.69.73,Canada,Ontario,Toronto,M5A,CLOUDFLARENET
+www.nsd.org,104.17.70.73,Canada,Ontario,Toronto,M5A,CLOUDFLARENET
+www.nsd.org,104.17.71.73,Canada,Ontario,Toronto,M5A,CLOUDFLARENET
+sip.nsd.org,52.112.65.75,United States,Virginia,Tappahannock,22560,MICROSOFT-CORP-MSN-AS-BLOCK
+helpdesk.nsd.org,152.157.69.3,United States,Washington,Bothell,98021,NSD417

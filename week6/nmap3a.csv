@@ -1,0 +1,15 @@
+IP,DNS
+52.55.29.219,id.nsd.org
+52.72.225.54,id.nsd.org
+152.157.68.27,ns1.nsd.org
+152.157.68.28,ns2.nsd.org
+20.120.161.221,ns3.nsd.org
+152.157.64.4,vpn.nsd.org
+152.157.69.3,mail.nsd.org
+104.17.67.73,www.nsd.org
+104.17.68.73,www.nsd.org
+104.17.69.73,www.nsd.org
+104.17.70.73,www.nsd.org
+104.17.71.73,www.nsd.org
+52.112.65.75,sip.nsd.org
+152.157.69.3,helpdesk.nsd.org
