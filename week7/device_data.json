@@ -1,0 +1,62 @@
+[
+    {
+        "name": "name",
+        "macaddress": "macaddress",
+        "ip": "ip",
+        "cpucount": "cpucount",
+        "disks": "disks",
+        "ram": "ram",
+        "ostype": "ostype",
+        "osversion": "osversion"
+    },
+    {
+        "name": "yoda",
+        "macaddress": "c8:f6:50:e7:93:ff",
+        "ip": "192.168.10.21",
+        "cpucount": "1",
+        "disks": "1",
+        "ram": "4",
+        "ostype": "ubuntu",
+        "osversion": "12.04"
+    },
+    {
+        "name": "neytiri",
+        "macaddress": "30:85:a9:57:a9:1d",
+        "ip": "192.168.10.10",
+        "cpucount": "2",
+        "disks": "1",
+        "ram": "16",
+        "ostype": "windows",
+        "osversion": "2012"
+    },
+    {
+        "name": "hal",
+        "macaddress": "2c:44:fd:02:02:3b",
+        "ip": "192.168.10.22",
+        "cpucount": "1",
+        "disks": "1",
+        "ram": "2",
+        "ostype": "windows",
+        "osversion": "7"
+    },
+    {
+        "name": "thufir",
+        "macaddress": "5c:96:9d:90:10:b9",
+        "ip": "192.168.10.11",
+        "cpucount": "4",
+        "disks": "4",
+        "ram": "4",
+        "ostype": "centos",
+        "osversion": "6"
+    },
+    {
+        "name": "leeloo",
+        "macaddress": "00:10:49:1c:25:7f",
+        "ip": "192.168.10.23",
+        "cpucount": "1",
+        "disks": "1",
+        "ram": "4",
+        "ostype": "windows",
+        "osversion": "7"
+    }
+]
