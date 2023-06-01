@@ -60,7 +60,7 @@ def insert_server_info(data):
         name = str(data[0])[:max_name_length].ljust(max_name_length) if len(data) > 0 else ''
 
         # Prepare the SQL query
-        query = "INSERT INTO device_1 (name, macaddress, ip, cpucount, disks, ram, ostype, osversion) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO device (name, macaddress, ip, cpucount, disks, ram, ostype, osversion) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
         values = (name, data[1], data[2], data[3], data[4], data[5], data[6], data[7])
 
         # Execute the query

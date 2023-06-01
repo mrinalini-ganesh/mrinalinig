@@ -58,5 +58,25 @@
         "ram": "4",
         "ostype": "windows",
         "osversion": "7"
+    },
+    {
+        "name": "ip-172-31-94-85                                   ",
+        "macaddress": "12:2b:8a:78:f0:e7",
+        "ip": "127.0.0.1",
+        "cpucount": "1",
+        "disks": "1",
+        "ram": "2",
+        "ostype": "Ubuntu",
+        "osversion": "22.04"
+    },
+    {
+        "name": "ip-172-31-94-85                                   ",
+        "macaddress": "12:2b:8a:78:f0:e7",
+        "ip": "127.0.0.1",
+        "cpucount": "1",
+        "disks": "1",
+        "ram": "2",
+        "ostype": "Ubuntu",
+        "osversion": "22.04"
     }
 ]

@@ -40,7 +40,7 @@ try:
     cursor = connection.cursor(pymysql.cursors.DictCursor)
 
     # Retrieve data from the 'device' table
-    query = "SELECT * FROM device_1"
+    query = "SELECT * FROM device"
     cursor.execute(query)
     data = cursor.fetchall()
 
