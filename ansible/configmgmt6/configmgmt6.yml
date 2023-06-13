@@ -1,0 +1,48 @@
+- name: Perform File Checks
+  hosts: linux1
+  gather_facts: no
+  tasks:
+    - name: Check file checksum etc host
+      command: md5sum /etc/hosts
+      register: md5_hosts
+
+    - name: Printing errors
+      debug:
+        msg: "Checksum for file does not match the expected hash!"
+      when: md5_hosts.stdout.split()[0] != '1463508f28edb4d6d5ae349b20e00409'
+
+    - name: Check file checksum etc group
+      command: md5sum /etc/group
+      register: md5_group
+
+    - name: Printing errors
+      debug:
+        msg: "Checksum for file does not match the expected hash!"
+      when: md5_group.stdout.split()[0] != 'a32d2ce5c98f6262e11989e2ce141461'
+
+    - name: Check file checksum etc passwd
+      command: md5sum /etc/passwd
+      register: md5_passwd
+
+    - name: Printing errors
+      debug:
+        msg: "Checksum for file does not match the expected hash!"
+      when: md5_passwd.stdout.split()[0] != 'd5e01e1a884cf82c56430e3f3e49e50b'
+
+    - name: Check file checksum etc sshd_config
+      command: md5sum /etc/ssh/sshd_config
+      register: md5_ssh_sshd_config
+
+    - name: Printing errors
+      debug:
+        msg: "Checksum for file does not match the expected hash!"
+      when: md5_ssh_sshd_config.stdout.split()[0] != '23a8a2b1a8f1538be49eb86313367191'
+
+    - name: Check file checksum etc environment
+      command: md5sum /etc/environment
+      register: md5_environment
+
+    - name: Printing errors
+      debug:
+        msg: "Checksum for file does not match the expected hash!"
+      when: md5_environment.stdout.split()[0] != 'f3377ed52072acbbf4cbb59af03c7fdb' 

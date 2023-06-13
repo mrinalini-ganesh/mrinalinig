@@ -1,0 +1,64 @@
+- name: Ping Windows Server
+  hosts: windows1
+  gather_facts: false
+  tasks:
+    - name: Create User1
+      win_user:
+        name: User1
+        password: Password123
+        state: present
+
+    - name: Create Group1
+      win_group:
+        name: Group1
+        state: present
+
+    - name: Check if User1 is a member of Group1
+      win_shell: |
+        $group = Get-LocalGroup -Name "Group1"
+        $user = Get-LocalUser -Name "User1"
+        $members = Get-LocalGroupMember -Group $group
+        $is_member = $members | Where-Object { $_.SID -eq $user.SID }
+        if ($is_member) {
+          $result = "already_member"
+        } else {
+          $result = "not_member"
+        }
+        Write-Host $result
+      register: check_membership
+      changed_when: false
+
+    - name: Add User1 to Group1 if not already a member
+      win_shell: |
+        if ("{{ check_membership.stdout }}" -eq "not_member") {
+          Add-LocalGroupMember -Group "Group1" -Member "User1"
+        }
+      when: check_membership.stdout == "not_member"
+
+    - name: Create Shared directory
+      win_file:
+        path: C:\Shared
+        state: directory
+
+    - name: Set permissions on Shared directory
+      win_acl:
+        path: C:\Shared
+        user: "Group1"
+        rights: "FullControl"
+        type: allow
+        state: present
+
+    - name: Share C:\Shared
+      win_share:
+        name: Shared
+        path: C:\Shared
+        description: Shared folder
+        permissions:
+          - "Group1,Full"
+        state: present
+
+    - name: Install OpenSSH Server
+      win_chocolatey:
+        name: openssh
+        package_params: /SSHServerFeature
+        state: present

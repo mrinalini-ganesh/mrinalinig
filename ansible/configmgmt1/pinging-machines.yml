@@ -1,0 +1,11 @@
+- name: Ping Windows Server
+  hosts: windows1
+  tasks:
+    - name: Perform Windows ping
+      win_ping:
+
+- name: Ping Linux Server
+  hosts: linux1
+  tasks:
+    - name: Perform Linux ping
+      ping:
