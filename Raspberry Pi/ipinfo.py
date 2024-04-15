@@ -8,7 +8,7 @@ from __future__ import unicode_literals
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-# I really should go back and see if I really need to import all this shit
+# This project is to document switch port connectivity. This code will be run on Raspberry Pi to display switch information, leveraging LLDP and Python code to achieve this functionality.
 
 import socket
 #from socket import *
@@ -453,7 +453,7 @@ def netpi():
         printout ("Data Jack:   ",GREEN)
         printout ("{}".format(dataJack),WHITE)
         switchtype = switchType[getindex]
-        switchName = outputSysName #because I am stupid
+        switchName = outputSysName #because
         switchip = hqVLANSubnet[getindex] +'1'
         vlansubnet = hqVLANSubnet[getindex] + '0 255.255.255.0'
         vlanname = hqVLANName[getindex]
