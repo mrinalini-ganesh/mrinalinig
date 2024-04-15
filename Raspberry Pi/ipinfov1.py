@@ -1,4 +1,5 @@
 
+# In this project, the main focus is on documenting switch port connectivity. I will utilize Raspberry Pi to display switch information, leveraging LLDP and Python code to achieve this functionality.
 # install this for the lldpcli. sudo apt-get install lldpd
 
 import subprocess
